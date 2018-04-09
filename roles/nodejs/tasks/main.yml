@@ -10,6 +10,8 @@
   notify:
     - remove node
 
+- meta: flush_handlers
+
 - name: Installing node and npm
   yum:
     name:
