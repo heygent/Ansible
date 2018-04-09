@@ -16,7 +16,6 @@
   yum:
     name:
       - nodejs
-      - npm
       - gcc-c++
       - make
     enablerepo: epel

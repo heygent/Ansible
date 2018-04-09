@@ -4,6 +4,5 @@
 - name: remove node
   yum:
     name:
-      - npm
       - nodejs
     state: absent
