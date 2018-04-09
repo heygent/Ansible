@@ -2,8 +2,6 @@
 # tasks file for nodejs
 # specific to Amazon Linux, untested in other EL environments
 
-- name: Removing previously installed node versions
-
 - name: Installing node 8 repo
   shell: >
     curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
