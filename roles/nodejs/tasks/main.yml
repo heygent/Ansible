@@ -1,11 +1,23 @@
 ---
 # tasks file for nodejs
+# specific to Amazon Linux, untested in other EL environments
 
-- name: Installing ndoe and npm
+- name: Removing previously installed node versions
+
+- name: Installing node 8 repo
+  shell: >
+    curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
+  args:
+    creates: /etc/yum.repos.d/nodesource-el7.repo
+  notify:
+    - remove node
+
+- name: Installing node and npm
   yum:
-    name: "{{ item }}"
+    name:
+      - nodejs
+      - npm
+      - gcc-g++
+      - make
     enablerepo: epel
     state: installed
-  with_items:
-    - nodejs
-    - npm
