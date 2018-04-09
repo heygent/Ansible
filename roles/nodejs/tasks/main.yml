@@ -15,7 +15,7 @@
     name:
       - nodejs
       - npm
-      - gcc-g++
+      - gcc-c++
       - make
     enablerepo: epel
     state: installed
